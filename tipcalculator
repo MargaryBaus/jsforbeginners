@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Montserrat', sans-serif;">
+	<table cellpadding="2px" cellspacing="5px">
+		<th><h3>Tip Calculator</h3></th>
+		<tr>
+			<td>Bill Amount (in dollars): </td>
+			<td><input type="number" id='bill' placeholder="ie. 50"></td>
+		</tr>
+		<tr>
+			<td>Tip Amount (in %): </td>
+			<td><input type="number" id='tip' placeholder='ie. 15'></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button style='color: white; background-color: #51C0D1; 
+			border-radius: 12px; padding: 7px; border: 1px solid cyan;'
+			onclick='calculateTip()' type='button'>
+			Calculate tip and total bill</button></td>
+		</tr>
+		<tr>
+			<td><h3>the total is: <span></span></h3></td>
+		</tr>
+	</table>
+
+	<script>
+		
+		function calculateTip() {
+
+			var bill = document.querySelector('#bill').value;
+			bill = Number(bill);
+
+			var tipValue = document.querySelector('#tip').value;
+			tipValue = Number(tipValue) / 100;
+
+			var finalAmount = bill + bill * tipValue;
+
+			var total = document.querySelector('span');
+			total.innerHTML = finalAmount;
+		};
+
+
+	</script>
+</body>
+</html>
